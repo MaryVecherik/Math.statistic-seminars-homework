@@ -10,8 +10,10 @@ def task1():
     n = 256
     sigma = 16
     Zt = stats.norm.ppf(0.975)
+    
     left = x - Zt*sigma/np.sqrt(n)
     right = x + Zt*sigma/np.sqrt(n)
+    
     print(f'доверительный интервал: [{left:.2f}; {right:.2f}].')
 
 
@@ -23,17 +25,15 @@ def task2():
     покрывающего это значение с доверительной вероятностью 0,95."""
     a = np.array([6.9, 6.1, 6.2, 6.8, 7.5, 6.3, 6.4, 6.9, 6.7, 6.1])
     n = len(a) #длина 
-    
     x = np.mean(a) #среднее арифметическое
-    
     D = np.var(a, ddof=1) #несмещенная дисперсия выборки a
-
+    
     #доверительный интервал для среднего
     t = stats.t.ppf(0.975, n-1)
-
+    
     left = x - t*np.sqrt(D/n)
     right = x + t*np.sqrt(D/n)
-
+    
     print(f'доверительный интервал: [{left:.4f}; {right:.4f}].')
 
 
