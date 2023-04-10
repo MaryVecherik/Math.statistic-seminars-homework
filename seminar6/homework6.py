@@ -50,7 +50,7 @@ def task3():
     x2 = np.mean(b)
     
     #разность средних
-    delta = x1 - x2
+    delta = x2 - x1
     
     #несмещенная дисперсия выборки a
     D1 = np.var(a, ddof=1)
